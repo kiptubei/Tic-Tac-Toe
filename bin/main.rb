@@ -37,8 +37,8 @@ while i <= 9
     move.add_move(one.name, x)
     p "your move is on slot #{x}"
     if move.win_check(one.name)
-    	puts "winner is #{one.name}"
-    	break
+      puts "winner is #{one.name}"
+      break
     end
   else
     p "It's #{p2} turn, please enter a digit between 1-9"
@@ -50,8 +50,8 @@ while i <= 9
     move.add_move(two.name, o)
     p "your move is on slot #{o}"
     if move.win_check(two.name)
-    	puts "winner is #{two.name}"
-    	break
+      puts "winner is #{two.name}"
+      break
     end
   end
   i += 1
