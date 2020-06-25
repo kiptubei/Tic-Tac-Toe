@@ -15,6 +15,7 @@ end
 class Move
   @@move = {}
   @@count = 0
+  @@array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   # winning_ar = []
   #
   # def initialize; end
@@ -24,11 +25,19 @@ class Move
   end
 
   def add_move(player, number)
-    @@move[player] << number if @@move[player].size < 3
+    @@move[player] << number.to_i if @@move[player].size < 5
     @@count += 1
   end
 
   def find_players
     @@move.each_with_index { |item, _index| print "#{item} \n" }
+  end
+
+  def win_check(player)
+    arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    if @@move[player].size >= 3
+      t =arr.any? { |x| x == @@move[player] } 
+        true if t
+    end
   end
 end
