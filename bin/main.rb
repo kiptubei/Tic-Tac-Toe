@@ -1,31 +1,33 @@
 #!/usr/bin/env ruby
+class Player
+  @move = []
+  attr_reader :name, :sym
 
-p 'Welcome to this nice Tic-tac-toe game'
-p 'Enter player 1 name'
-p1 = gets.chomp
-p "Thank you for participating #{p1}, you got X "
-p 'Enter player 2 name'
-p2 = gets.chomp
-p "Thank you for participating #{p2}, you got O "
-
-# playing
-puts "This is the board \n"
-
-puts " 1 | 2 | 3 | \n 4 | 5 | 6 | \n 7 | 8 | 9 |"
-
-i = 1
-while i <= 9
-  if i.odd?
-    p "It's #{p1} turn, please enter a digit between 1-9"
-    x = gets.chomp
-    p "your move is on slot #{x}"
-  else
-    p "It's #{p2} turn, please enter a digit between 1-9"
-    o = gets.chomp
-    p "your move is on slot #{o}"
+  def initialize(name, sym)
+    @name = name
+    @sym = sym
   end
-  i += 1
 end
 
-p "Hooray!!! #{p1} is the winner"
-p 'Thank you for playing the game!'
+class Move
+  @@move = {}
+
+  def initialize(player)
+    @@move.key = player
+  end
+
+  winning_ar = [[1, 2, 3][4, 5, 6][7, 8, 9][1, 4, 7][2, 5, 8][3, 6, 9][1, 5, 9][3, 5, 7]]
+
+  def add_move(name, move)
+    @@move[name] << move if @@move[name].size < 3
+  end
+
+  def check_win
+    if @@move[name].size >= 3
+      if winning_ar.any? { @move[name] }
+        winner = name
+        puts winner
+      end
+    end
+  end
+end
