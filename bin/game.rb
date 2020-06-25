@@ -14,24 +14,21 @@ end
 
 class Move
   @@move = {}
-  winning_ar = [][]
+  @@count = 0
+  # winning_ar = []
+  #
+  # def initialize; end
 
-  def initialize(player)
-    @@move.key = player
+  def add_player(player)
+    @@move[player.name] = []
   end
 
-  winning_ar = [[1, 2, 3][4, 5, 6][7, 8, 9][1, 4, 7][2, 5, 8][3, 6, 9][1, 5, 9][3, 5, 7]]
-
-  def add_move(name, move)
-    @@move[name] << move if @@move[name].size < 3
+  def add_move(player, number)
+    @@move[player] << number if @@move[player].size < 3
+    @@count += 1
   end
 
-  def check_win
-    if @@move[name].size >= 3
-      if winning_ar.any? { @move[name] }
-        winner = name
-        puts winner
-      end
-    end
+  def find_players
+    @@move.each_with_index { |item, _index| print "#{item} \n" }
   end
 end
