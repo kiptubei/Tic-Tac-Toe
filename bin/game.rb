@@ -1,16 +1,20 @@
 #!/usr/bin/env ruby
 class Player
-  @move = []
   attr_reader :name, :sym
 
   def initialize(name, sym)
     @name = name
     @sym = sym
   end
+
+  def check
+    puts name
+  end
 end
 
 class Move
   @@move = {}
+  winning_ar = [][]
 
   def initialize(player)
     @@move.key = player

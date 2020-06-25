@@ -1,12 +1,18 @@
 #!/usr/bin/env ruby
+load 'game.rb'
 
 p 'Welcome to this nice Tic-tac-toe game'
 p 'Enter player 1 name'
 p1 = gets.chomp
-p "Thank you for participating #{p1}, you got X "
+one = Player.new(p1, 'X')
+one.check
+
+p "Thank you for participating #{one.name}, you got X "
 p 'Enter player 2 name'
 p2 = gets.chomp
-p "Thank you for participating #{p2}, you got O "
+two = Player.new(p2, 'O')
+
+p "Thank you for participating #{two.name}, you got O "
 
 # playing
 puts "This is the board \n"
