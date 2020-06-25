@@ -24,11 +24,16 @@ puts "\nThis is the board \n"
 
 puts " 1 | 2 | 3 | \n 4 | 5 | 6 | \n 7 | 8 | 9 |"
 
+emp_array = []
 i = 1
 while i <= 9
   if i.odd?
     p "It's #{p1} turn, please enter a digit between 1-9"
     x = gets.chomp
+    if move.number_present(x)
+      puts "you want to override! This is invalid. \n please put an another number"
+      next
+    end
     move.add_move(one.name, x)
     p "your move is on slot #{x}"
     if move.win_check(one.name)
@@ -38,6 +43,10 @@ while i <= 9
   else
     p "It's #{p2} turn, please enter a digit between 1-9"
     o = gets.chomp
+    if move.number_present(o)
+      puts "you want to override! This is invalid. \n please put an another number"
+      next
+    end
     move.add_move(two.name, o)
     p "your move is on slot #{o}"
     if move.win_check(two.name)

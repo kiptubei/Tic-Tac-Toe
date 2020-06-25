@@ -15,7 +15,7 @@ end
 class Move
   @@move = {}
   @@count = 0
-  @@array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  @@emp_array = []
   # winning_ar = []
   #
   # def initialize; end
@@ -39,5 +39,14 @@ class Move
       t =arr.any? { |x| x == @@move[player] } 
         true if t
     end
+  end
+
+  def number_present(number)
+    if @@emp_array.include?(number.to_i)
+      return true
+    else
+      @@emp_array.push(number.to_i)
+      return false
+  end
   end
 end
