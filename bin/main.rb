@@ -25,7 +25,7 @@ while i < 9
       next
     end
     if emp_array.include?(x)
-      puts "you want to override the existing place, try with another number "
+      puts 'you want to override the existing place, try with another number '
       next
     else
       emp_array.push(x)
@@ -39,7 +39,7 @@ while i < 9
       next
     end
     if emp_array.include?(o)
-      puts "you want to override the existing place, try with another number "
+      puts 'you want to override the existing place, try with another number '
       next
     else
       emp_array.push(o)
