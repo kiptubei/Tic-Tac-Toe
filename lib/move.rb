@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 class Move
   # rubocop:disable Style/ClassVars
   @@move = {}
