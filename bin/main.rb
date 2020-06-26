@@ -5,6 +5,10 @@ move = Move.new
 p 'Welcome to this nice Tic-tac-toe game'
 p 'Enter player 1 name'
 p1 = gets.chomp
+while p1 == ''
+  p 'please enter a valid name'
+  p1 = gets.chomp
+end
 one = Player.new(p1, 'X')
 
 move.add_player(one)
@@ -12,8 +16,8 @@ move.add_player(one)
 p "Thank you for participating #{one.name}, you got X "
 p 'Enter player 2 name'
 p2 = gets.chomp
-while p2 == p1
-  p 'You have entered the same name. Try another'
+while p2 == p1 or p2 == ''
+  p 'You have entered the same or invalid name. Try another'
   p2 = gets.chomp
 end
 two = Player.new(p2, 'O')
