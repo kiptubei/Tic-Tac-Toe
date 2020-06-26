@@ -6,19 +6,12 @@ class Player
     @name = name
     @sym = sym
   end
-
-  def check
-    puts name
-  end
 end
 
 class Move
   @@move = {}
   @@count = 0
   @@emp_array = []
-  # winning_ar = []
-  #
-  # def initialize; end
 
   def add_player(player)
     @@move[player.name] = []
@@ -33,18 +26,27 @@ class Move
     @@move.each_with_index { |item, _index| print "#{item} \n" }
   end
 
-  def win_check(player)
-    arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
-    if @@move[player].size >= 3
-      true if arr.any? { |x| combination(x, @@move[player]) }
+  def number_present(number)
+    if @@emp_array.include?(number.to_i) || !((number.to_i <= 9) && (number.to_i >= 1))
+      true
+    else
+      @@emp_array.push(number.to_i)
+      false
     end
   end
 
-  def combination(ar, ar_played)
-    sol_ar = ar.join.to_s
-    puts sol_ar
-    sol_ar_played = ar_played.join.to_s
-    puts sol_ar_played
+  def win_check(player)
+    arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    true if @@move[player].size >= 3 and arr.any? { |x| combination(x, @@move[player]) }
+  end
+
+  private
+
+  def combination(arrs, ar_played)
+    sol_ar = arrs.join.to_s
+    array = ar_played
+    array = greater_than(ar_played, arrs) if ar_played.size > 3
+    sol_ar_played = array.join.to_s
     if /[#{sol_ar}]{3}/.match(sol_ar_played)
       true
     else
@@ -52,12 +54,8 @@ class Move
     end
   end
 
-  def number_present(number)
-    if @@emp_array.include?(number.to_i) || (!((number.to_i <= 9) && (number.to_i >= 1)))
-      true
-    else
-      @@emp_array.push(number.to_i)
-      false
-  end
+  def greater_than(arr, sol_ar)
+    ars = arr.reject { |x| x == (arr - sol_ar)[0] }
+    ars
   end
 end
