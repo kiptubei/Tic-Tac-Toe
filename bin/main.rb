@@ -31,7 +31,7 @@ while i <= 9
     p "It's #{p1} turn, please enter a digit between 1-9"
     x = gets.chomp
     if move.number_present(x)
-      puts "you want to override! This is invalid. \n please put an another number"
+      puts "you put a wrong number! This is invalid. \n please put an another number"
       next
     end
     move.add_move(one.name, x)
@@ -44,7 +44,7 @@ while i <= 9
     p "It's #{p2} turn, please enter a digit between 1-9"
     o = gets.chomp
     if move.number_present(o)
-      puts "you want to override! This is invalid. \n please put an another number"
+      puts "you put a wrong number! This is invalid. \n please put an another number"
       next
     end
     move.add_move(two.name, o)

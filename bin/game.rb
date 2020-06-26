@@ -53,7 +53,7 @@ class Move
   end
 
   def number_present(number)
-    if @@emp_array.include?(number.to_i)
+    if @@emp_array.include?(number.to_i) || (!((number.to_i <= 9) && (number.to_i >= 1)))
       true
     else
       @@emp_array.push(number.to_i)
