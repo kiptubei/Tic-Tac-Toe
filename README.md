@@ -2,16 +2,21 @@
 
 Implementation of the tic-tac-toe game in ruby - command line. This is a two player game where one player have to put his/her pieces in a straight line either horizontally, vetically or diagonally while preventing the opponent by alligning his/her.
 
+![screenshot](./lib/Screenshot1.png)
+
+![screenshot](./lib/Screenshot2.png)
+
+![screenshot](./lib/Screenshot3.png)
 
 # Game Instructions (RULES FOR TIC-TAC-TOE)
- 
+
 1. The game is played on a grid that's 3 squares by 3 squares.
 
 2. The first player is X, and the second player is O. Players take turns putting their marks in the numbered squares.
 
 3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
 
-4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a draw. 
+4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a draw.
 
 
 # Getting Started 🚀
@@ -48,13 +53,13 @@ $ ./main.rb
 
 ## CONTRIBUTOR
 
-​#### 👤 **Mark James Kiptubei**
+​👤 **Mark James Kiptubei**
 
-- - Github: [@kiptubei](https://github.com/kiptubei)
-- - Linkedin: [mark](https://www.linkedin.com/in/mark-james-k-aa875829/)
+- [Github](https://github.com/kiptubei)
+- [Linkedin](https://www.linkedin.com/in/mark-james-k-aa875829/)
 
 
-#### 👤 **Dipesh Kumar**
+👤 **Dipesh Kumar**
 
 - [Github](@Dipeshtwis)
 - [Twitter](@97deepeshkumar)
