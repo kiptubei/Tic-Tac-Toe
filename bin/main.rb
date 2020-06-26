@@ -63,4 +63,4 @@ end
 
 puts 'It is a DRAW!!!!' unless win
 
-p 'Thank you for playing the game!'
+p 'Thank you for participating the game!'
