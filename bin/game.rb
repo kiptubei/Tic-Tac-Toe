@@ -9,6 +9,7 @@ class Player
 end
 
 class Move
+  # rubocop:disable Style/ClassVars
   @@move = {}
   @@count = 0
   @@emp_array = []
@@ -58,4 +59,5 @@ class Move
     ars = arr.reject { |x| x == (arr - sol_ar)[0] }
     ars
   end
+  # rubocop:enable Style/ClassVars
 end
