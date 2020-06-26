@@ -15,14 +15,20 @@ board = " 1 | 2 | 3 | \n 4 | 5 | 6 | \n 7 | 8 | 9 |"
 puts board
 
 i = 1
-
+emp_array = []
 while i < 9
   if i.odd?
     p "It's #{p1} turn, please enter a digit between 1-9"
     x = gets.chomp
     unless (x.to_i <= 9) && (x.to_i >= 1)
       puts 'Wrong value ,Please Enter value between 1 - 9'
-      x = gets.chomp
+      next
+    end
+    if emp_array.include?(x)
+      puts "you want to override the existing place, try with another number "
+      next
+    else
+      emp_array.push(x)
     end
     board = board.gsub!(x, 'X')
   else
@@ -30,7 +36,13 @@ while i < 9
     o = gets.chomp
     unless (o.to_i <= 9) && (o.to_i >= 1)
       puts 'Wrong value ,Please Enter value between 1 - 9'
-      o = gets.chomp
+      next
+    end
+    if emp_array.include?(o)
+      puts "you want to override the existing place, try with another number "
+      next
+    else
+      emp_array.push(o)
     end
     board = board.gsub!(o, 'O')
   end
