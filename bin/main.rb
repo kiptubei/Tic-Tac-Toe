@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-load 'game.rb'
+require_relative '../lib/player'
+require_relative '../lib/move'
 move = Move.new
 p 'Welcome to this nice Tic-tac-toe game'
 p 'Enter player 1 name'
