@@ -50,5 +50,15 @@ while i < 9
   i += 1
 end
 
-p "Hooray!!! #{p1} is the winner"
-p 'Thank you for playing the game!'
+
+
+
+
+
+
+
+
+puts 'It is a DRAW!!!!' unless win
+
+p 'Thank you for participating the game!'
+
