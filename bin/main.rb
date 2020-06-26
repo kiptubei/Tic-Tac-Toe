@@ -12,6 +12,10 @@ move.add_player(one)
 p "Thank you for participating #{one.name}, you got X "
 p 'Enter player 2 name'
 p2 = gets.chomp
+while p2 == p1
+  p 'You have entered the same name. Try another'
+  p2 = gets.chomp
+end
 two = Player.new(p2, 'O')
 move.add_player(two)
 
