@@ -65,6 +65,12 @@ $ ./main.rb
 - [Twitter](@97deepeshkumar)
 - [Linkedin](https://www.linkedin.com/in/dipesh-kumar-b6ab88134/)
 
+👤 **Temesghen Teketse**
+
+- [Github](@Dipeshtwis)
+- [Twitter](@temesghentekes1)
+- [Linkedin](https://www.linkedin.com/in/temesghen-tekeste-bahta-8b5243193/)
+
 
 
 # Github link:
